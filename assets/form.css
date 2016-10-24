@@ -1,0 +1,5 @@
+.checkbox-custom input[type=radio]:checked + label:after,
+.checkbox-custom input[type=checkbox]:checked + label:after {
+    font-family: "FontAwesome";
+    content: "\f00c";
+}

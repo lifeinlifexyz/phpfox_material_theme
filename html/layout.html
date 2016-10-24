@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html {{ html }}>
+<head>
+    <title>{{ title }}</title>
+    {{ header }}
+</head>
+<body {{ body }}>
+<div id="pf-loading-message">
+    <span class="l-1"></span>
+    <span class="l-2"></span>
+    <span class="l-3"></span>
+    <span class="l-4"></span>
+    <span class="l-5"></span>
+    <span class="l-6"></span>
+</div>
+
+<nav id="section-header" class="navbar navbar-default navbar-fixed-top sticky-bar">
+   <div class="navbar-container container-fluid">
+
+        <div class="navbar-brand">
+            <ul class="nav navbar-toolbar">
+                <li>
+                    <a class="collapsed" data-toggle="collapse" href="#site-menu" role="button"
+                       aria-expanded="false">
+                        <i class="fa fa-reorder">
+                        </i>
+                    </a>
+                </li>
+                <li class="clearfix">{{ logo }}</li>
+                {% if is_user() == true %}
+                {% if user_group_setting('search.can_use_global_search') %}
+                    <li class="visible-sm visible-xs">
+                        <a type="button" data-target="#search-panel2" data-toggle="collapse">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                {% endif %}
+                {% endif %}
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="navbar-collapse navbar-collapse-toolbar hidden-xs">
+
+            {% if is_user() == true %}
+            {% if user_group_setting('search.can_use_global_search') %}
+            <div id="search-panel" class="navbar-brand navbar-brand-center hidden-sm">
+                <div class="js_temp_friend_search_form"></div>
+                <form method="get" action="{{url('search')}}" class="header_search_form" id="header_search_form">
+                    <div class="form-group has-feedback">
+                        <i class="input-search-icon fa fa-search form-control-feedback" aria-hidden="true"></i>
+                        <input type="text" name="q" placeholder="{{ _p('Search...') }}" autocomplete="off"
+                               class="form-control js_temp_friend_search_input in_focus"
+                               id="header_sub_menu_search_input"/>
+                    </div>
+                </form>
+            </div>
+            {% endif %}
+            <ul id="user_sticky_bar" class="nav navbar-toolbar navbar-right navbar-toolbar-right">
+            </ul>
+
+            {% else %}
+            {{sticky_bar}}
+            {% endif %}
+        </div>
+
+        <div class="navbar-collapse-toolbar visible-xs">
+            <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
+                <li class="visible-sm visible-xs">
+                    <a type="button" data-target="#xs-nav" data-toggle="collapse">
+                        <i class="fa fa-ellipsis-h"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        {% if is_user() == true %}
+        {% if user_group_setting('search.can_use_global_search') %}
+        <div id="search-panel2" class="collapse navbar-search-overlap">
+            <div class="js_temp_friend_search_form"></div>
+            <form role="search" method="get" action="{{url('search')}}" class="header_search_form_sm"
+                  id="header_search_form_sm">
+                <div class="form-group has-feedback">
+                    <div class="search-inner">
+                        <i class="input-search-icon input-search-search fa fa-search" aria-hidden="true"></i>
+                        <input type="text" name="q" placeholder="{{ _p('Search...') }}" autocomplete="off"
+                               class="form-control js_temp_friend_search_input in_focus"
+                               id="header_sub_menu_search_input1"/>
+                        <a href="#search-panel2" type="button" class="input-search-close input-search-icon"
+                           data-target="#search-panel2" data-toggle="collapse">
+                            <i class="fa fa-close"></i>
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        {% endif %}
+        {% endif %}
+    </div>
+    {{sticky_bar_xs}}
+</nav>
+
+
+<div id="site-menu" class="collapse" aria-expanded="true">
+    {{menu}}
+</div>
+<div id="main" class="{{main_class}}">
+    <div id="main-page-header" class="page-header header-filter clear-filter row_image">
+        {{ location_6 }}
+    </div>
+    <div class="main main-raised">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                {{ location_11 }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-4 sticky" id="left">
+                {{left}}
+            </div>
+            <div class="col-md-6 col-sm-8" id="content-holder">
+                <div id="content-stage" class="bg-tran">
+                    <div class="">
+                        {{ breadcrumb }}
+                    </div>
+                    <div class="">
+                        <div id="top">
+                            {{ main_top }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" id="content">
+                            {{ errors }}
+                            {{ content }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sticky col-md-3 col-md-offset-0 col-sm-offset-4" id="right">
+                {{ right }}
+            </div>
+        </div>
+        <div class="container">
+            <div class="col-md-12 col-sm-12">
+                {{ location_8 }}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="bottom_placeholder">
+    {{ location_12 }}
+</div>
+
+<span id="top-link-block" class="hidden">
+    <a href="#top" onclick="$('html,body').animate({scrollTop:0},'slow');return false;">
+        <i class="fa fa-arrow-circle-up"></i>
+    </a>
+</span>
+
+<footer id="section-footer">
+    <div class="container-fluid">
+        {{ footer }}
+        {{ location_5 }}
+    </div>
+</footer>
+{{ js }}
+</body>
+</html>
