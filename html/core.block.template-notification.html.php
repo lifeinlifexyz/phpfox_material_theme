@@ -122,5 +122,13 @@ defined('PHPFOX') or exit('NO DICE!');
         </a>
         {/if}
     </li>
+    <?php if (setting('m9_facebook_enabled')):?>
+        <li>
+            <a class="btn btn02 btn-primary text-uppercase btn-round" rel="hide_box_title" role="link" style="background: #3b5998 !important; border:none !important;"
+               href="{url link='fb.login'}">
+                <i class="fa fa-facebook-official"></i> Facebook
+            </a>
+        </li>
+    <?php endif;?>
 </ul>
 {/if}

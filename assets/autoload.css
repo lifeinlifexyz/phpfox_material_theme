@@ -2,7 +2,7 @@
 @import "material.min.css";
 @import "form.css";
 body {
-  background: #e4e8eb;
+  backgrocontainer_widthund: #e4e8eb;
   color: #555555;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
 }
@@ -54,6 +54,9 @@ a:hover {
   width: 130px;
   border: none;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+#sHashTagValue {
+  font-size: 26px;
 }
 #xs-nav {
   border-top: 1px solid transparent;
@@ -119,7 +122,7 @@ a:hover {
   margin: 10px auto 0;
 }
 .brand-wellcome h1 {
-  font-size: 4.8em;
+  /*font-size: 4.8em;*/
   font-weight: 600;
   display: inline-block;
   position: relative;
@@ -155,7 +158,7 @@ a:hover {
 }
 .section-user .avatar {
   display: block;
-  min-height: 138px;
+  min-height: 140px;
   max-height: 150px;
 }
 .section-user .avatar > * {
@@ -250,20 +253,15 @@ a:hover {
 .section-row.image-left {
   overflow: inherit;
 }
-.section-row.image-left .image-container {
-  max-width: 1040px;
-  margin-top: -140px;
+.section-row.image-left .col-md-7 {
   position: relative;
-  height: 660px;
+  min-height: 360px;
 }
-.section-row.image-left .image-container img {
-  max-width: 1040px;
-  width: auto;
+.section-row.image-left .image-container {
   position: absolute;
-  right: 0;
-  top: 0px;
-  left: inherit;
-  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -35%);
 }
 .section-row.dark .title {
   color: #FFFFFF;
@@ -317,7 +315,7 @@ a:hover {
   background-size: cover;
 }
 .section-row .title {
-  margin-top: 140px;
+  margin-top: 90px;
   margin-bottom: 5px;
   font-weight: 700;
   font-size: 1.825em;
@@ -358,6 +356,9 @@ a:hover {
 .mail_thread_holder .mail_content {
   border-radius: 10px;
   background: #eeeeee;
+}
+.mail_thread_holder .mail_content .mail_text {
+  overflow: hidden;
 }
 .is_user.mail_thread_holder .mail_content {
   background: #fff;
@@ -414,6 +415,18 @@ a:hover {
   padding-top: 6px;
   padding-bottom: 6px;
 }
+#top-link-block {
+  right: 30px;
+  bottom: 30px;
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  z-index: 9;
+  font-size: 48px;
+}
+#top-link-block a {
+  color: rgba(118, 118, 118, 0.8);
+}
 #page_cmmaterial_index-visitor #top {
   display: none;
 }
@@ -421,6 +434,9 @@ a:hover {
   transform: translate3d(0px, 0px, 0px);
   height: 90vh;
   overflow: hidden;
+}
+#page_cmmaterial_index-visitor .main-raised {
+  margin-top: -20vh;
 }
 #page_cmmaterial_index-visitor .main {
   background: #fff;
@@ -445,7 +461,7 @@ a:hover {
 }
 ._is_guest_user .section-coll {
   padding-top: 30px;
-  padding-bottom: 0;
+  padding-bottom: 30px;
   text-align: center;
 }
 ._is_guest_user .section-coll .info {
@@ -480,7 +496,8 @@ a:hover {
   line-height: 53px;
 }
 .v-scrollable {
-  overflow-y: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 h4.description {
   font-size: 1.5em;
@@ -527,6 +544,7 @@ h4.description {
   position: relative;
   z-index: 3;
   padding: 20px;
+  max-width: 1400px;
 }
 .main-raised {
   margin: -40vh 5px 0px;
@@ -541,6 +559,12 @@ h4.description {
 @media (min-width: 768px) {
   .main-raised {
     margin: -40vh 30px 0px;
+  }
+}
+@media (min-width: 1400px) {
+  .main {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 .page-header {
@@ -1118,10 +1142,52 @@ div.row_first {
   /*todo::get from settings*/
   background-color: transparent !important;
 }
+@media only screen
+and (min-device-width : 700px)
+and (max-device-width : 800px)  {
+  .section-user .avatar {
+    min-height: 95px;
+    max-height: 140px;
+  }
+  .section-user .avatar > * > span {
+    top: 40px;
+  }
+  ._is_guest_user h1, ._is_guest_user h3{
+    line-height:normal;
+  }
+  #page_cmmaterial_index-visitor .main-raised{
+    margin-top: -8vh;
+  }
+}
+@media (max-width: 700px){
+  .section-user .avatar {
+    min-height: 95px;
+    max-height: 140px;
+  }
+  .section-user .avatar > * > span {
+    top: 40px;
+  }
+  ._is_guest_user h1, ._is_guest_user h3{
+    line-height:normal;
+  }
+  #page_cmmaterial_index-visitor .main-raised{
+    margin-top: -8vh;
+  }
+}
 @media (max-width: 992px) {
   .navbar-header {
     background-color: #db4437;
     display: none;
+  }
+}
+@media (max-width: 767px) {
+  #section-header .nav > li {
+    position: static;
+  }
+  #section-header .dropdown-menu {
+    width: 100%;
+    left: 0;
+    right: 0;
   }
 }
 #js_block_border_core_menusub ul.action > li.active > a,

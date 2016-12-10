@@ -4,7 +4,7 @@
 @import "variables";
 
 body {
-    background:@body_bg;
+    backgrocontainer_widthund:@body_bg;
 	color:@color;
 	font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
 }
@@ -62,6 +62,9 @@ a:hover {
     border: none;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   }
+}
+#sHashTagValue {
+    font-size: 26px;
 }
 #xs-nav {
     border-top: 1px solid transparent;
@@ -169,7 +172,7 @@ a:hover {
     }
     .avatar {
         display: block;
-        min-height: 138px;
+        min-height: 140px;
         max-height: 150px;
         
         > * {
@@ -280,23 +283,15 @@ a:hover {
 }
 .section-row.image-left {
     overflow: inherit;
-
-    .image-container {
-        
-        max-width: 1040px;
-        margin-top: -140px;
+    .col-md-7 {
         position: relative;
-        height: 660px;
-        
-        img {
-            max-width: 1040px;
-            width: auto;
-            position: absolute;
-            right: 0;
-            top: 0px;
-            left: inherit;
-            height: auto;
-        }
+        min-height: 360px;
+    }
+    .image-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -35%);
     }
     
 }
@@ -367,7 +362,7 @@ a:hover {
     background-size: cover;
     
     .title {
-        margin-top: 140px;
+        margin-top: 90px;
         margin-bottom: 5px;
         font-weight: 700;
         font-size: 1.825em;
@@ -413,6 +408,9 @@ a:hover {
 .mail_thread_holder .mail_content {
     border-radius: 10px;
     background: @main_bg;
+    .mail_text {
+        overflow: hidden;
+    }
 }
 
 .is_user.mail_thread_holder {
@@ -473,6 +471,20 @@ a:hover {
     padding-bottom: 6px;
 }
 
+#top-link-block {
+    right: 30px;
+    bottom: 30px;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    z-index: 9;
+    font-size: 48px;
+}
+
+#top-link-block a {
+    color: rgba(118, 118, 118, 0.80);
+}
+
 #page_cmmaterial_index-visitor {
 
      #top {
@@ -482,6 +494,9 @@ a:hover {
     	transform: translate3d(0px, 0px, 0px);
     	height: 90vh;
     	overflow: hidden;
+    }
+    .main-raised {
+        margin-top: -20vh;
     }
     
     .main {
@@ -507,7 +522,7 @@ a:hover {
     }
     .section-coll {
         padding-top: 30px;
-        padding-bottom: 0;
+        padding-bottom: 30px;
         text-align: center;
         
            .info {
@@ -534,8 +549,10 @@ a:hover {
                 font-size: 1.3em;
             }
     }
+    
  
 }
+    
 .forum_holder .block,
 .forum_holder.block  {
     box-shadow: none;
@@ -547,7 +564,8 @@ a:hover {
 line-height: 53px;
 }
 .v-scrollable {
-  overflow-y: hidden; 
+  overflow-y: scroll; 
+  -webkit-overflow-scrolling: touch;
 }
 
 h4.description {
@@ -602,6 +620,7 @@ h4.description {
     position: relative;
     z-index: 3;
     padding: 20px;
+    max-width: 1400px;
 }
 
 .main-raised {
@@ -620,6 +639,13 @@ h4.description {
     .main-raised {
         margin: -40vh 30px 0px;
     }
+}
+
+@media (min-width: 1400px) {
+   .main {
+    margin-left: auto;
+    margin-right: auto;
+   }
 }
 .page-header {
     position: relative;
@@ -1235,6 +1261,20 @@ border-radius: 50%;
         background-color: @header_bg;
 		display: none;
     }
+}
+
+@media (max-width: 767px){
+    #section-header {
+        .nav > li{
+            position: static;
+        }    
+        .dropdown-menu {
+            width: 100%;
+            left: 0;
+            right: 0;
+        }
+    }
+
 }
 
 #js_block_border_core_menusub ul.action > li.active > a, #js_block_border_core_menusub ul.action > li.active > a:hover, #js_block_border_core_menusub ul.action > li.active > a:focus {

@@ -33,7 +33,7 @@ defined('PHPFOX') or exit('NO DICE!');
                        data-panel="#notification-panel-body-xs"
                        data-toggle="dropdown"
                        data-url="{url link='notification.panel'}">
-                        <i class="fa fa-envelope"></i>
+                        <i class="fa fa-bell"></i>
                         <span id="js_total_new_notifications"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-left dropdown-menu-media" id="notification-panel-body-xs">
@@ -45,7 +45,7 @@ defined('PHPFOX') or exit('NO DICE!');
                        data-toggle="dropdown"
                        data-panel="#message-panel-body-xs"
                        data-url="{url link='mail.panel'}">
-                        <i class="fa fa-comment"></i>
+                        <i class="fa fa-envelope"></i>
                         <span id="js_total_new_messages"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right dropdown-menu-media" id="message-panel-body-xs">
@@ -121,6 +121,14 @@ defined('PHPFOX') or exit('NO DICE!');
                     </a>
                     {/if}
                 </li>
+                <?php if (setting('m9_facebook_enabled')):?>
+                <li style="width: 50%">
+                    <a class="btn-primary text-uppercase" rel="hide_box_title" role="link" style="font-size: smaller;background: #3b5998 !important; border:none !important;"
+                       href="{url link='fb.login'}">
+                        <i class="fa fa-facebook-official"></i> Facebook
+                    </a>
+                </li>
+                <?php endif;?>
             </ul>
         </div>
     {/if}
