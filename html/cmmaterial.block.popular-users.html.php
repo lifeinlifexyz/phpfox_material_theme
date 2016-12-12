@@ -1,28 +1,34 @@
-<div class="section dark section-user">
+{if !empty($aBlogs)}
+<div class="section section-blogs">
 	<div class="container-fluid">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="section-description">
-				<h2 class="title">{phrase var='cmmaterial.popular_users'}</h2>
+				<h2 class="title">{$sTitle}</h2>
+				<a href="{$sViewMoreUrl}" class="btn btn-primary btn-round">{phrase var='cmmaterial.view_more'}</a>
 			</div>
 		</div>
-		{if !empty($aPopularUsers)}
+	</div>
+	<div class="container-fluid">
 		<div class="row">
 			<?php
 				$index = 0;
 			?>
-			{foreach from=$aPopularUsers item=aUser}
-			<div class="col-md-4 col-sm-6 col-xs-12 item">
-				<div class="card card-profile card-plain">
-					<div class="col-xs-6">
-						<a href="{url link = $aUser.user_name}" class="avatar card-image">
-							{$aUser.profile_image}
+			{foreach from=$aBlogs item=aBlog}
+			<div class="col-md-4 col-sm-6">
+				<div class="card card-plain card-blog">
+					<div class="card-image">
+						<a href="{$aBlog.link}">
+							<span class="img" style="background-image: url({$aBlog.url_photo});"></span>
 						</a>
 					</div>
-					<div class="col-xs-6">
-						<div class="content">
-							<h4 class="card-title">{$aUser.full_name}</h4>
-							<h6 class="category text-muted">{$aUser.total_friend} {phrase var='friend.menu_friend_friends_532c28d5412dd75bf975fb951c740a30'}</h6>
-						</div>
+					<div class="content">
+						<h4 class="card-title">
+							<a class="card-title" href="{$aBlog.link}">{$aBlog.title}</a>
+						</h4>
+						<p class="card-description">
+							{$aBlog.parsed_text|stripbb|highlight:'search'|split:500|shorten:150:'...'}
+							<a href="{$aBlog.link}">More</a>
+						</p>
 					</div>
 				</div>
 			</div>
@@ -38,9 +44,7 @@
 			<?php endif;?>
 			{/foreach}
 		</div>
-		{else}
-		<span class="not_content">{phrase var='cmmaterial.no_users_found'}</span>
-		{/if}
-		<div class="clear"></div>
 	</div>
+
 </div>
+{/if}
