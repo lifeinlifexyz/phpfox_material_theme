@@ -22,6 +22,7 @@
         "html\/notification.controller.panel.html.php",
         "html\/photo.block.share.html.php",
         "html\/cmmaterial.block.popular-users.html.php",
+        "html\/cmmaterial.block.blog.html.php",
         "html\/user.controller.register.html.php",
         "start.php",
         "theme.png",
