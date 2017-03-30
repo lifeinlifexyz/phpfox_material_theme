@@ -20,14 +20,14 @@ defined('PHPFOX') or exit('NO DICE!');
 		</div>
 		<div class="js_upload_form_holder_global">
 			<div class="js_upload_form_holder">
-				<form method="post" enctype="multipart/form-data" action="{url link='attachment.frame'}" target="js_upload_frame" id="attachment_js_upload_frame_form" class="js_upload_frame_form">
+				<form method="post" enctype="multipart/form-data" action="{url link='attachment.frame'}?id={$id}" target="js_upload_frame" id="attachment_js_upload_frame_form" class="js_upload_frame_form">
 					<div><input type="hidden" name="category_name" value="{$sCategoryId}" class="category_name" /></div>
 					<div><input type="hidden" name="input" value="{$sAttachmentInput}" /></div>
 					<div><input type="hidden" name="attachment_obj_id" value="{$sAttachmentObjId}" /></div>
 					<div><input type="hidden" name="upload_id" value="js_new_temp_form_0_{$sCategoryId}" class="js_temp_upload_id" /></div>
 					{if $bIsAttachmentInline}
 					<div><input type="hidden" name="attachment_inline" value="true" /></div>
-					{/if}								
+					{/if}
 					{if $sCustomAttachment}
 					<div><input type="hidden" name="custom_attachment" value="{$sCustomAttachment}" /></div>
 					{/if}
@@ -37,14 +37,7 @@ defined('PHPFOX') or exit('NO DICE!');
 							<span class="input-group-btn">
 							  <span class="btn btn-success btn-file">
 								<i class="fa fa-upload" aria-hidden="true"></i>
-								<input id="global_attachment_photo_file_input"
-									   {if isset($attachment_custom) && $attachment_custom = 'photo'} accept="image/*"{/if}
-								  class="js_file_attachment"
-								  type="file"
-								  name="file[]"
-								  value=""
-								  onchange="$('.activity_feed_form_button .button').removeClass('button_not_active'); $('#upload-file-info-caption').val($(this).val().replace(/^.*[\\\/]/, '')); $Core.uploadNewAttachment(this, {if $sCustomAttachment == 'video'}false{else}true{/if}, '{phrase var='attachment.uploading' phpfox_squote=true}');"
-								  />
+								<input id="global_attachment_photo_file_input" {if isset($attachment_custom) && $attachment_custom = 'photo'} accept="image/*"{/if} class="js_file_attachment" type="file" name="file[]" value="" onchange="$('.activity_feed_form_button .button').removeClass('button_not_active'); $('#upload-file-info-caption').val($(this).val().replace(/^.*[\\\/]/, '')); $Core.uploadNewAttachment(this, {if $sCustomAttachment == 'video'}false{else}true{/if}, '{phrase var='attachment.uploading' phpfox_squote=true}');"/>
 							  </span>
 							</span>
 						</div>
