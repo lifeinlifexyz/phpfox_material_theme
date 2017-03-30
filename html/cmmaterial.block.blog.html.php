@@ -18,7 +18,7 @@
 				<div class="card card-plain card-blog">
 					<div class="card-image">
 						<a href="{$aBlog.link}">
-							<span class="img" style="background-image: url({$aBlog.url_photo});"></span>
+							<span class="img" style="background-image: url({if isset($aBlog.image) && !empty($aBlog.image)}{$aBlog.image}{else}{$aBlog.url_photo}{/if});"></span>
 						</a>
 					</div>
 					<div class="content">
