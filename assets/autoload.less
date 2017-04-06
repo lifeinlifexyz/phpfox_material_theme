@@ -407,7 +407,7 @@ a:hover {
 }
 .mail_thread_holder .mail_content {
     border-radius: 10px;
-    background: @main_bg;
+    background: #d6e0e8;
     .mail_text {
         overflow: hidden;
     }
@@ -432,7 +432,7 @@ a:hover {
     height: 0;
     content: '';
     border: 10px solid transparent;
-    border-top-color: @main_bg;
+    border-top-color: #d6e0e8;
     position: absolute;
 }
 #content-holder {
@@ -841,8 +841,10 @@ h4.description {
 }
 
 .comment_mini_content_commands {
-border-bottom: 1px solid @border;
+    borderr-bottom: 1px solid @border;
     padding-bottom: 50px;
+    padding-top: 10px;
+    border-left: none;
 }
 
 .navbar {
@@ -1081,7 +1083,6 @@ background: none;
 }
 
 .feed_like_link a.js_like_link_toggle {
-  display: block;
   background: #ebebeb;
   color: #bdbdbd;
   width: 40px;
@@ -1547,7 +1548,9 @@ a.js_like_link_toggle:hover,
 #js_block_border_pages_like,
 .block
 {
-    .user_profile_link_span a {
+    .user_profile_link_span a, 
+    .user_profile_link_span
+    {
         text-align: center !important;    
     }
 
@@ -1558,9 +1561,7 @@ a.js_like_link_toggle:hover,
         border-radius: 50%;
         .no_image_user {
             height: 77px;
-            span {
-                top: 13px;
-            }
+          
         }
     }
 }
@@ -1740,7 +1741,22 @@ a.activity_feed_content_link_title:hover, #content div.row_title_info h1 a.link:
 		color:#fff !important;
 	}
 }
+.menu-user-cover-photo {
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
 
+.user_rows_mini {
+    margin: 0;
+}
+
+.comment_mini_textarea_holder {
+    border: none;
+}
 @media (min-width: 768px) {
 	.navbar-header {
 		display: none;
@@ -1749,4 +1765,19 @@ a.activity_feed_content_link_title:hover, #content div.row_title_info h1 a.link:
 	.media-body {
 		overflow: hidden;
 	}
+}
+
+.panel_row {
+    .panel_action {
+        span {
+            cursor: pointer;
+            background: #0DB9CE;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    }
+}
+
+.user_rows_mini .user_rows > .friend-info {
+    text-align: center;
 }
