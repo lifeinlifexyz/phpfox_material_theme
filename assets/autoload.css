@@ -13,6 +13,9 @@ a:hover {
 a:hover {
   color: #db4437;
 }
+.ui-datepicker {
+    z-index: 999 !important;
+}
 ._image_32,
 ._image_40 {
   border-radius: 50%;
