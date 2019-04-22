@@ -1,3 +1,7 @@
+<h2>Paid Support:</h2>       
+<p>The phpfox apps and themes by codemake are provided under the MIT license with no commercial support or liability. 
+<a href="mailto:phpfox@lifeinlife.xyz">phpfox@lifeinlife.xyz</a> also provides commercial support and professional customisation services.</p>
+
 <h1>PHPFox Material Theme:</h1>
 <p>You do not like the design of your social network or think that something is missing? We have a solution how to fix it! We provide you with ux-oriented material design template which are proved by google's ux-experts.</p>
 <p>Material Design is a complex idea, when well executed, is almost imperceptible. Almost being the operative word here; Material Design involves subtle integration of increasingly powerful technologies such as HTML5, CSS3 and BootStrap to provide detail oriented user experience enhancements, that are both passively and actively interactive, keeping visitors engaged and entertained even after they’ve lost their initial spur of interest.</p>
